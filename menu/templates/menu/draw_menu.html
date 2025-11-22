@@ -1,0 +1,17 @@
+{% load menu_tags %}
+
+<ul>
+    {% for item in menu_items %}
+        <li>
+            <a href="{{ item.url }}" {% if item.is_active %}style="font-weight: bold; color: red;"{% endif %}>
+                {{ item.title }}
+            </a>
+
+            {# Логика отрисовки детей #}
+            {# Рисуем детей, если элемент развернут (is_expanded) #}
+            {% if item.children and item.is_expanded %}
+                {% include "menu/draw_menu.html" with menu_items=item.children %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

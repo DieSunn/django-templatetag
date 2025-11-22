@@ -1,0 +1,16 @@
+{% load menu_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Test</title>
+</head>
+<body>
+    <h1>Главное меню</h1>
+    {% draw_menu 'main_menu' %}
+
+    <hr>
+    
+    <h1>Меню футера (пример нескольких меню)</h1>
+    {% draw_menu 'footer_menu' %}
+</body>
+</html>

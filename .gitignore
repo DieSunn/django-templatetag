@@ -1,0 +1,47 @@
+Вот стандартный и полный .gitignore для Django-проектов. Создай файл с именем .gitignore в корне твоего проекта (там же, где manage.py) и вставь туда этот текст:
+
+code
+Gitignore
+download
+content_copy
+expand_less
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Если используешь папку media для загрузки файлов пользователями
+media/
+
+# Если делаешь collectstatic (папка, куда собирается статика при деплое)
+# Обычно исходники лежат в static/, а результат сборки в staticfiles/ или assets/
+staticfiles/
+
+# Virtual Environment (Виртуальное окружение)
+venv/
+env/
+.venv/
+.env
+
+# IDE (Настройки редакторов кода)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS (Системные файлы)
+.DS_Store
+Thumbs.db
+Почему это важно:
+
+db.sqlite3: Базу данных не стоит комитить, так как она меняется локально и весит много, плюс на сервере будет своя база.
+
+__pycache__: Это скомпилированные файлы Python, они создаются автоматически и не нужны в репозитории.
+
+.env / venv/: Папки окружения и файлы с секретами никогда не должны попадать в git.
