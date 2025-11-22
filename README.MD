@@ -15,7 +15,7 @@
 
 1.  **Клонируйте репозиторий:**
     ```bash
-    git clone 
+    git clone https://github.com/DieSunn/django-templatetag.git
     cd django_menu_project
     ```
 
